@@ -5,17 +5,21 @@
 //  Created by Muhammed Shabeer on 14/10/21.
 //
 
-import Foundation
+import UIKit
 
 
 class MainScreenViewModel {
     var locationManager = LocationManager()
+    var updateCurrentLocationText: ((String) -> Void)?
+    var updateCurrentWeather: ((Weather) -> Void)?
+    var updateImage: ((UIImage?) -> Void)?
     
     func getCurrentLocation() {
         if locationManager.isLocationEnabled() {
-            locationManager.getCurrentLocation { location in
+            locationManager.getCurrentLocation { [weak self] location in
                 guard let location = location else { return }
-                self.getCurrentWeather(location: location)
+                self?.updateCurrentLocationText?(location)
+                self?.getCurrentWeather(location: location.withoutSpaces)
             }
         } else {
             print("location access denied")
@@ -28,7 +32,20 @@ class MainScreenViewModel {
             if error != nil {
                 print(error.debugDescription)
             } else {
-                print(weather)
+                guard let weather = weather else { return }
+                self.updateCurrentWeather?(weather)
+                self.getImage(urlString: weather.current?.weatherIcons?.first ?? "")
+            }
+        }
+    }
+    
+    func getImage(urlString: String) {
+        NetworkService.sharedInstance().getImage(urlString: urlString) { image, error in
+            if error != nil {
+                self.updateImage?(nil)
+                print(error.debugDescription)
+            } else {
+                self.updateImage?(image)
             }
         }
     }

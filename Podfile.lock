@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.3)
+  - SVProgressHUD (2.2.5)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - SVProgressHUD
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SVProgressHUD
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: f3395ceeabf82e81ca4daa1d22d2f2973eb04397
+PODFILE CHECKSUM: 5ba5f6f96a7cb1a35b681cc762b2e4828be79bb8
 
 COCOAPODS: 1.10.2

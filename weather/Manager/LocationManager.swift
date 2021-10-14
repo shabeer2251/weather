@@ -90,7 +90,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             guard let this = self else { return }
             this.stopUpdatingLocation()
             this.getPlaceMark(for: location, with: { (placemark, _) in
-                completion(placemark?.locality?.withoutSpaces)
+                completion(placemark?.locality)
             })
         }
         stopUpdatingLocation()

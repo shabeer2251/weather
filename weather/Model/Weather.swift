@@ -36,13 +36,17 @@ struct Current: Codable {
     var observationTime: String?
     var temperature: Int?
     var weatherDescriptions: [String]?
-   // var weatherIcons: [String]?
+    var humidity: Int?
+    var windSpeed: Int?
+    var weatherIcons: [String]?
     
     enum CodingKeys: String, CodingKey {
         case observationTime = "observation_time"
         case temperature = "temperature"
         case weatherDescriptions = "weather_descriptions"
-      //  case weatherIcons = "weather_icons"
+        case humidity = "humidity"
+        case windSpeed = "wind_speed"
+        case weatherIcons = "weather_icons"
     }
     
 }

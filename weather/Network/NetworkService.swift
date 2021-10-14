@@ -29,18 +29,32 @@ class NetworkService {
         let url = baseUrl + endPoint + "?access_key=" + apiKey + "&query=" + location
         AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
             .response{ responseData in
-            if responseData.error != nil {
-                callBack(nil, responseData.error)
-            } else {
-                guard let data = responseData.data else {
+                if responseData.error != nil {
                     callBack(nil, responseData.error)
-                    return }
-                do {
-                    let weatherInfo = try JSONDecoder().decode(Weather.self, from: data)
-                    callBack(weatherInfo, nil)
-                } catch {
-                    callBack(nil, error)
+                } else {
+                    guard let data = responseData.data else {
+                        callBack(nil, responseData.error)
+                        return }
+                    do {
+                        let weatherInfo = try JSONDecoder().decode(Weather.self, from: data)
+                        callBack(weatherInfo, nil)
+                    } catch {
+                        callBack(nil, error)
+                    }
                 }
+            }
+    }
+    
+    func getImage(urlString: String, callBack: @escaping (UIImage?, Error?) -> Void) {
+    AF.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).response { responseData in
+        if responseData.error != nil {
+            callBack(nil, responseData.error)
+        } else {
+            guard let data = responseData.data else {
+                callBack(nil, responseData.error)
+                return }
+            let image = UIImage(data: data)
+            callBack(image, nil)
             }
         }
     }
