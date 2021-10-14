@@ -21,7 +21,15 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        bindViewModel()
+        setupUI()
+    }
+    
+    func bindViewModel() {
+        viewModel.getCurrentLocation()
     }
 
+    func setupUI() {
+        
+    }
 }
