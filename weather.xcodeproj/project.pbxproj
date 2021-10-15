@@ -26,6 +26,7 @@
 		2D6537BC2718D4B50047E161 /* Stylekit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537BB2718D4B50047E161 /* Stylekit.swift */; };
 		2D6537BE2718D55A0047E161 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537BD2718D55A0047E161 /* UIFont+App.swift */; };
 		2D6537C02718D98F0047E161 /* DialogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537BF2718D98F0047E161 /* DialogUtils.swift */; };
+		2DEE68CC27198F2A00C5FD85 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE68CB27198F2A00C5FD85 /* UIColor+App.swift */; };
 		2EA6DE10CD5D3819FD96BD67 /* Pods_weather_weatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DDDD898F80EA74379B7405 /* Pods_weather_weatherUITests.framework */; };
 		8C96AAFA434855D09BEEE005 /* Pods_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35687D1DC0D29BF5C83A69B /* Pods_weather.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		2D6537BB2718D4B50047E161 /* Stylekit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylekit.swift; sourceTree = "<group>"; };
 		2D6537BD2718D55A0047E161 /* UIFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
 		2D6537BF2718D98F0047E161 /* DialogUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogUtils.swift; sourceTree = "<group>"; };
+		2DEE68CB27198F2A00C5FD85 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		6F6C80AE5592A6EE85F659BF /* Pods-weatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTests.debug.xcconfig"; path = "Target Support Files/Pods-weatherTests/Pods-weatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82E193C2CC5CB19809E7B3FF /* Pods-weatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTests.release.xcconfig"; path = "Target Support Files/Pods-weatherTests/Pods-weatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		8878C701B50304884B513189 /* Pods-weather-weatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-weatherUITests.debug.xcconfig"; path = "Target Support Files/Pods-weather-weatherUITests/Pods-weather-weatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				2D6537B92718CD450047E161 /* String+Custom.swift */,
 				2D6537BD2718D55A0047E161 /* UIFont+App.swift */,
+				2DEE68CB27198F2A00C5FD85 /* UIColor+App.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				2D6537BA2718CD450047E161 /* String+Custom.swift in Sources */,
 				2D6537B72718B25F0047E161 /* Weather.swift in Sources */,
 				2D6537B02718A5050047E161 /* NetworkService.swift in Sources */,
+				2DEE68CC27198F2A00C5FD85 /* UIColor+App.swift in Sources */,
 				2D6537BE2718D55A0047E161 /* UIFont+App.swift in Sources */,
 				2D6537AE27187A380047E161 /* AppCoordinator.swift in Sources */,
 				2D6537C02718D98F0047E161 /* DialogUtils.swift in Sources */,

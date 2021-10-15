@@ -51,7 +51,6 @@ class MainScreenViewController: UIViewController {
             self?.weatherDescriptionLabel.text = desc
             self?.windLabel.text = "Wind: " + windSpeed + " Km/hr"
             self?.humidityLabel.text = "Humidity: " + humidity + " %"
-            DialogUtils.hideLoading()
         }
         
         viewModel.updateImage = { [weak self] image in
@@ -62,11 +61,14 @@ class MainScreenViewController: UIViewController {
 
     func setupUI() {
         DialogUtils.showLoading()
-        StyleKit.applyBoldLabelStyle(label: locationLabel, fontSize: 24)
-        StyleKit.applyBoldLabelStyle(label: temperatureLabel, fontSize: 30, color: UIColor.white)
-        StyleKit.applyMediumLabelStyle(label: weatherDescriptionLabel  , fontSize: 20, color: UIColor.white)
-        StyleKit.applyMediumLabelStyle(label: windLabel  , fontSize: 16, color: UIColor.white)
-        StyleKit.applyMediumLabelStyle(label: humidityLabel  , fontSize: 16, color: UIColor.white)
+        StyleKit.applyBoldLabelStyle(label: locationLabel, fontSize: 24, color: UIColor.label)
+        StyleKit.applyBoldLabelStyle(label: temperatureLabel, fontSize: 30, color: UIColor.appLabel)
+        StyleKit.applyMediumLabelStyle(label: weatherDescriptionLabel  , fontSize: 20, color: UIColor.appLabel)
+        StyleKit.applyMediumLabelStyle(label: windLabel  , fontSize: 16, color: UIColor.appLabel)
+        StyleKit.applyMediumLabelStyle(label: humidityLabel  , fontSize: 16, color: UIColor.appLabel)
         StyleKit.applyRoundCornersAndShadowAroundView(view: contentView)
+        StyleKit.applyRoundCornersAndShadowAroundView(view: weatherImageView)
+        contentView.backgroundColor = UIColor.appContentBox
+        self.view.backgroundColor = UIColor.appBackground
     }
 }

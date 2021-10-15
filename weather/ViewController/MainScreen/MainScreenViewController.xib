@@ -42,33 +42,33 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0u-Mr-2CE">
-                            <rect key="frame" x="20" y="141.5" width="264" height="21"/>
+                            <rect key="frame" x="20" y="141.5" width="214" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-yD-l8i">
-                            <rect key="frame" x="20" y="182.5" width="264" height="21"/>
+                            <rect key="frame" x="20" y="182.5" width="214" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="krs-dQ-mal">
-                            <rect key="frame" x="294" y="157.5" width="50" height="50"/>
+                            <rect key="frame" x="244" y="157.5" width="100" height="100"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="CYL-2L-jfW"/>
-                                <constraint firstAttribute="height" constant="50" id="abY-5j-Lg3"/>
+                                <constraint firstAttribute="width" constant="100" id="CYL-2L-jfW"/>
+                                <constraint firstAttribute="height" constant="100" id="abY-5j-Lg3"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
                         <constraint firstItem="krs-dQ-mal" firstAttribute="leading" secondItem="Y0u-Mr-2CE" secondAttribute="trailing" constant="10" id="08w-vA-Ah0"/>
+                        <constraint firstItem="krs-dQ-mal" firstAttribute="firstBaseline" secondItem="Y0u-Mr-2CE" secondAttribute="firstBaseline" id="90I-90-wH0"/>
                         <constraint firstAttribute="trailing" secondItem="qEr-0J-cyr" secondAttribute="trailing" constant="10" id="AEc-0b-wjZ"/>
                         <constraint firstItem="Y0u-Mr-2CE" firstAttribute="top" secondItem="qEr-0J-cyr" secondAttribute="bottom" constant="40" id="Nb2-vf-QHt"/>
                         <constraint firstItem="xoc-yD-l8i" firstAttribute="leading" secondItem="RxA-Ce-xPe" secondAttribute="leading" constant="20" id="Tfu-ok-s74"/>
                         <constraint firstItem="xoc-yD-l8i" firstAttribute="top" secondItem="Y0u-Mr-2CE" secondAttribute="bottom" constant="20" id="aAi-3B-xHy"/>
-                        <constraint firstItem="krs-dQ-mal" firstAttribute="firstBaseline" secondItem="Y0u-Mr-2CE" secondAttribute="firstBaseline" id="aVk-Oc-2xh"/>
                         <constraint firstItem="QqE-F0-Wi9" firstAttribute="top" secondItem="RxA-Ce-xPe" secondAttribute="top" constant="20" id="bQl-ZT-qdL"/>
                         <constraint firstItem="qEr-0J-cyr" firstAttribute="top" secondItem="QqE-F0-Wi9" secondAttribute="bottom" constant="40" id="cbW-SO-GW2"/>
                         <constraint firstItem="qEr-0J-cyr" firstAttribute="leading" secondItem="RxA-Ce-xPe" secondAttribute="leading" constant="10" id="elp-fX-loN"/>
