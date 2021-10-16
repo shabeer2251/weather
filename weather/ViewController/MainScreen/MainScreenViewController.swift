@@ -14,11 +14,10 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var locationLabel: UILabel!
-    
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    
+    @IBOutlet weak var changeLanguageButton: UIButton!
     
     init(viewModel: MainScreenViewModel) {
         self.viewModel = viewModel
@@ -35,6 +34,20 @@ class MainScreenViewController: UIViewController {
         setupUI()
     }
     
+    
+    @IBAction func toggleLanguageButtonAction(_ sender: Any) {
+        Constants.languageCode.toggle()
+        refreshUI()
+    }
+    
+    func refreshUI() {
+        changeLanguageButton.setTitle("Toggle Language".localized, for: .normal)
+        let windSpeed = String(self.viewModel.weather?.current?.windSpeed ?? 0)
+        let humidity = String(self.viewModel.weather?.current?.humidity ?? 0)
+        self.windLabel.text = "Wind: ".localized + windSpeed + " " + "Km/hr".localized
+        self.humidityLabel.text = "Humidity: ".localized + humidity + " %"
+
+    }
     func bindViewModel() {
         viewModel.getCurrentLocation()
         
@@ -68,6 +81,7 @@ class MainScreenViewController: UIViewController {
         StyleKit.applyMediumLabelStyle(label: humidityLabel  , fontSize: 16, color: UIColor.appLabel)
         StyleKit.applyRoundCornersAndShadowAroundView(view: contentView)
         StyleKit.applyRoundCornersAndShadowAroundView(view: weatherImageView)
+        StyleKit.applyRoundCornerTheme(button: changeLanguageButton, title: "Toggle Language")
         contentView.backgroundColor = UIColor.appContentBox
         self.view.backgroundColor = UIColor.appBackground
     }

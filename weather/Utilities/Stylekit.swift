@@ -34,4 +34,17 @@ class StyleKit {
         view.layer.masksToBounds = false
     }
    
+    static func applyRoundCornerTheme(button: UIButton, fontSize: CGFloat = 14.0, title: String? = nil, cornerRadius: CGFloat = 7.0) {
+        //Title
+        if title != nil {
+            button.setTitle(title, for: .normal)
+        }
+        button.backgroundColor = .appContentBox
+        button.setTitleColor(.appLabel, for: .normal)
+        //FONT
+        button.titleLabel?.font = .mediumAppFont(of: fontSize)
+        button.layer.cornerRadius = cornerRadius
+        button.layer.masksToBounds = true
+    }
+    
 }

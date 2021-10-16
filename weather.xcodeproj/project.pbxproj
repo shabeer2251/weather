@@ -26,6 +26,7 @@
 		2D6537BC2718D4B50047E161 /* Stylekit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537BB2718D4B50047E161 /* Stylekit.swift */; };
 		2D6537BE2718D55A0047E161 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537BD2718D55A0047E161 /* UIFont+App.swift */; };
 		2D6537C02718D98F0047E161 /* DialogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537BF2718D98F0047E161 /* DialogUtils.swift */; };
+		2D670737271A999700025692 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D670739271A999700025692 /* Localizable.strings */; };
 		2DEE68CC27198F2A00C5FD85 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE68CB27198F2A00C5FD85 /* UIColor+App.swift */; };
 		2EA6DE10CD5D3819FD96BD67 /* Pods_weather_weatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DDDD898F80EA74379B7405 /* Pods_weather_weatherUITests.framework */; };
 		8C96AAFA434855D09BEEE005 /* Pods_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35687D1DC0D29BF5C83A69B /* Pods_weather.framework */; };
@@ -74,6 +75,10 @@
 		2D6537BB2718D4B50047E161 /* Stylekit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylekit.swift; sourceTree = "<group>"; };
 		2D6537BD2718D55A0047E161 /* UIFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
 		2D6537BF2718D98F0047E161 /* DialogUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogUtils.swift; sourceTree = "<group>"; };
+		2D670738271A999700025692 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2D67073A271A99CC00025692 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Weather.strings; sourceTree = "<group>"; };
+		2D67073B271A99CC00025692 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2D67073C271A99CC00025692 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DEE68CB27198F2A00C5FD85 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		6F6C80AE5592A6EE85F659BF /* Pods-weatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTests.debug.xcconfig"; path = "Target Support Files/Pods-weatherTests/Pods-weatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82E193C2CC5CB19809E7B3FF /* Pods-weatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTests.release.xcconfig"; path = "Target Support Files/Pods-weatherTests/Pods-weatherTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				2D65377727186FA00047E161 /* Assets.xcassets */,
+				2D670739271A999700025692 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 2D65376227186F9E0047E161;
 			productRefGroup = 2D65376C27186F9E0047E161 /* Products */;
@@ -389,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D670737271A999700025692 /* Localizable.strings in Resources */,
 				2D65377B27186FA00047E161 /* LaunchScreen.storyboard in Resources */,
 				2D6537A82718742D0047E161 /* MainScreenViewController.xib in Resources */,
 				2D65377827186FA00047E161 /* Assets.xcassets in Resources */,
@@ -572,6 +580,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D65377527186F9E0047E161 /* Base */,
+				2D67073A271A99CC00025692 /* es */,
 			);
 			name = Weather.storyboard;
 			sourceTree = "<group>";
@@ -580,8 +589,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D65377A27186FA00047E161 /* Base */,
+				2D67073B271A99CC00025692 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2D670739271A999700025692 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D670738271A999700025692 /* en */,
+				2D67073C271A99CC00025692 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -591,6 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -652,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

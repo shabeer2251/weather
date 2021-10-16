@@ -24,6 +24,7 @@ class AppCoordinator {
     // MARK: Coordinator methods
     func start() {
         window.rootViewController = rootViewController
+        rootViewController.navigationBar.isHidden = true
         performTransition(transition: .mainScreen)
         window.makeKeyAndVisible()
     }

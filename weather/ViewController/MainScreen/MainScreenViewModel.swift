@@ -13,6 +13,8 @@ class MainScreenViewModel {
     var updateCurrentLocationText: ((String) -> Void)?
     var updateCurrentWeather: ((Weather) -> Void)?
     var updateImage: ((UIImage?) -> Void)?
+   // var languageCode: LanguageCode = .english
+    var weather: Weather?
     
     func getCurrentLocation() {
         if locationManager.isLocationEnabled() {
@@ -33,6 +35,7 @@ class MainScreenViewModel {
                 print(error.debugDescription)
             } else {
                 guard let weather = weather else { return }
+                self.weather = weather
                 self.updateCurrentWeather?(weather)
                 self.getImage(urlString: weather.current?.weatherIcons?.first ?? "")
             }

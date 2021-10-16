@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  weather
+
+  Created by Muhammed Shabeer on 16/10/21.
+  
+*/
+"Toggle Language" = "Alternar Idioma";
+"Wind: " = "Viento: ";
+"Humidity: " = "Humedad: ";
+"Km/hr" = "Km/hora";
