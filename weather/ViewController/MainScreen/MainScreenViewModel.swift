@@ -10,20 +10,20 @@ import UIKit
 
 class MainScreenViewModel {
     var locationManager = LocationManager()
-    var updateCurrentLocationText: ((String) -> Void)?
+    var updateCurrentLocationText: ((_ text: String,_ shouldHideLoading: Bool) -> Void)?
     var updateCurrentWeather: ((Weather) -> Void)?
     var updateImage: ((UIImage?) -> Void)?
-   // var languageCode: LanguageCode = .english
     var weather: Weather?
     
     func getCurrentLocation() {
-        if locationManager.isLocationEnabled() {
+        if locationManager.isLocationEnabled(), locationManager.checkAuthrization() {
             locationManager.getCurrentLocation { [weak self] location in
                 guard let location = location else { return }
-                self?.updateCurrentLocationText?(location)
+                self?.updateCurrentLocationText?(location, false)
                 self?.getCurrentWeather(location: location.withoutSpaces)
             }
         } else {
+            self.updateCurrentLocationText?("location access denied", true)
             print("location access denied")
         }
     }
@@ -32,6 +32,7 @@ class MainScreenViewModel {
         NetworkService.sharedInstance().getCurrentWeather(location: location) {[weak self] weather, error in
             guard let self = self else { return }
             if error != nil {
+                self.updateCurrentLocationText?("Failed to fetch weather Info", true)
                 print(error.debugDescription)
             } else {
                 guard let weather = weather else { return }

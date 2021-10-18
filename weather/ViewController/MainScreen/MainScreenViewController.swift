@@ -19,6 +19,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var changeLanguageButton: UIButton!
     
+    // MARK: initialization
     init(viewModel: MainScreenViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -28,10 +29,11 @@ class MainScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Viewcontroller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
         setupUI()
+        bindViewModel()
     }
     
     
@@ -40,6 +42,7 @@ class MainScreenViewController: UIViewController {
         refreshUI()
     }
     
+    // MARK: Helper Methods
     func refreshUI() {
         changeLanguageButton.setTitle("Toggle Language".localized, for: .normal)
         let windSpeed = String(self.viewModel.weather?.current?.windSpeed ?? 0)
@@ -49,10 +52,11 @@ class MainScreenViewController: UIViewController {
 
     }
     func bindViewModel() {
-        viewModel.getCurrentLocation()
-        
-        viewModel.updateCurrentLocationText = {[weak self] text in
-            self?.locationLabel.text = text
+        viewModel.updateCurrentLocationText = {[weak self] text, shouldHideLoading in
+            self?.locationLabel.text = text.localized
+            if shouldHideLoading {
+                DialogUtils.hideLoading()
+            }
         }
         
         viewModel.updateCurrentWeather = { [weak self] weather in
@@ -70,6 +74,7 @@ class MainScreenViewController: UIViewController {
             self?.weatherImageView.image = image
             DialogUtils.hideLoading()
         }
+        viewModel.getCurrentLocation()
     }
 
     func setupUI() {

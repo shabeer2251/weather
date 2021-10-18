@@ -12,7 +12,6 @@ class DialogUtils {
     static func showLoading() {
         SVProgressHUD.dismiss()
         SVProgressHUD.show(withStatus: "Loading...")
-      //  SVProgressHUD.setContainerView(containerView)
         SVProgressHUD.setDefaultMaskType(.black)
     }
     

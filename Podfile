@@ -7,7 +7,6 @@ target 'weather' do
 
   # Pods for weather
 pod 'Alamofire'
-pod 'Toast-Swift'
 pod 'SVProgressHUD'
 
   target 'weatherTests' do
